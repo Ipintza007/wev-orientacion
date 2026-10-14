@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3. DBHko orientazio-testa</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:980px;margin:30px auto;padding:0 20px;line-height:1.45;background:#f7f7f7;color:#222}
+h1,h2{color:#1f3b5b}
+.card{background:#fff;padding:20px;margin:18px 0;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.q{padding:12px 0;border-bottom:1px solid #ddd}
+.scale label{margin-right:14px;white-space:nowrap}
+button{padding:12px 18px;font-size:16px;border:0;border-radius:8px;cursor:pointer}
+#results{display:none}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{border:1px solid #ccc;padding:8px;text-align:left}
+th{background:#eee}
+.small{font-size:.92em;color:#555}
+</style>
+</head>
+<body>
+
+<h1>3. DBHko ORIENTAZIO-TESTA</h1>
+<p><strong>4. DBHko hautazko ikasgaiak aukeratzeko</strong></p>
+
+<div class="card">
+<p>Galdera bakoitzean adierazi zenbateraino zauden ados:</p>
+<p><strong>0 = Batere ez · 1 = Gutxi · 2 = Neurri batean · 3 = Nahiko · 4 = Asko</strong></p>
+<p class="small">Ez dago erantzun zuzenik edo okerrik. Erantzun zure interesak eta gustuak kontuan hartuta.</p>
+</div>
+
+<form id="orientazioForm"></form>
+
+<div class="card">
+<button type="button" onclick="kalkulatu()">EMAITZAK KALKULATU</button>
+</div>
+
+<div id="results" class="card">
+<h2>NIRE EMAITZAK</h2>
+<div id="resultTable"></div>
+<h3>Nire profil nagusiak</h3>
+<ol id="topProfiles"></ol>
+<p class="small"><strong>Oharra:</strong> Test hau orientatzeko tresna bat da. Ez du ikaslearen etorkizuna automatikoki erabakitzen.</p>
+</div>
+
+<script>
+const questions = [
+"Matematikako problemak ebaztea gustatzen zait.",
+"Naturan gertatzen diren fenomenoen zergatia ulertzea interesatzen zait.",
+"Ordenagailuak, programazioa eta teknologia gustatzen zaizkit.",
+"Gorputzaren, osasunaren eta izaki bizidunen funtzionamendua interesatzen zait.",
+"Historia eta gizartean gertatzen diren aldaketak interesatzen zaizkit.",
+"Ekonomia, enpresak eta diruaren funtzionamendua interesatzen zaizkit.",
+"Hizkuntzak ikastea gustatzen zait.",
+"Irakurtzea, idaztea eta testuak aztertzea gustatzen zait.",
+"Marraztea, diseinatzea edo zerbait sortzea gustatzen zait.",
+"Gauzak eraikitzea, muntatzea edo konpontzea gustatzen zait.",
+"Formula eta kalkuluen bidez arazoak ebaztea gustatzen zait.",
+"Esperimentuak egitea eta emaitzak aztertzea gustatzen zait.",
+"Zerbait nola funtzionatzen duen ulertzeko piezak, makinak edo sistemak aztertzea gustatzen zait.",
+"Datuak, grafikoak eta estatistikak interpretatzea interesatzen zait.",
+"Nire ideiak idatziz azaltzea gustatzen zait.",
+"Eztabaidatzea eta nire iritzia argudioekin defendatzea gustatzen zait.",
+"Sormena erabiltzea eskatzen duten jarduerak gustatzen zaizkit.",
+"Jarduera praktikoak eta tailer motako lanak nahiago ditut teoria hutsa baino.",
+"Beste pertsonei laguntzea gustatzen zait.",
+"Taldean lan egitea gustatzen zait.",
+"Ingeniaritza, informatika, arkitektura edo antzeko ikasketak interesgarriak iruditzen zaizkit.",
+"Medikuntza, erizaintza, biologia, farmazia edo osasunarekin lotutako ikasketak interesatzen zaizkit.",
+"Ekonomia, enpresa, marketina edo administrazioa interesatzen zaizkit.",
+"Zuzenbidea, gizarte-zientziak edo politika interesatzen zaizkit.",
+"Historia, filosofia, hizkuntzak, itzulpengintza edo literatura interesatzen zaizkit.",
+"Diseinua, artea, ikus-entzunezkoak, argazkigintza edo musika interesatzen zaizkit.",
+"Mekanika, elektrizitatea, elektronika edo mantentze-lanak interesatzen zaizkit.",
+"Informatikarekin lotutako Lanbide Heziketa interesgarria iruditzen zait.",
+"Osasunarekin edo pertsonen zaintzarekin lotutako Lanbide Heziketa interesatzen zait.",
+"Enpresa, merkataritza, administrazioa edo turismoarekin lotutako Lanbide Heziketa interesatzen zait.",
+"Beste bi urtez ikasgai teorikoak ikasteko prest nago.",
+"Etorkizunean unibertsitatera joatea gustatuko litzaidake.",
+"Nahiago dut teoria ikasi eta gero aplikatzea.",
+"Nahiago dut lanbide bat modu praktikoan ikasi.",
+"Tailerrean, laborategian edo benetako ekipamenduekin lan egitea gustatuko litzaidake.",
+"Ahal bezain laster lanbide batekin lotutako prestakuntza egitea gustatuko litzaidake."
+];
+
+const form = document.getElementById("orientazioForm");
+questions.forEach((q,i)=>{
+  const div=document.createElement("div");
+  div.className="card q";
+  let html=`<strong>${i+1}. ${q}</strong><div class="scale">`;
+  for(let v=0;v<=4;v++){
+    html += `<label><input type="radio" name="q${i+1}" value="${v}"> ${v}</label>`;
+  }
+  html += "</div>";
+  div.innerHTML=html;
+  form.appendChild(div);
+});
+
+const profiles = {
+"Zientzia eta Teknologia":[1,2,3,11,12,13,21],
+"Biosanitarioa":[2,4,12,19,22,29],
+"Gizarte Zientziak":[5,6,14,16,23,24],
+"Giza Zientziak":[5,7,8,15,16,25],
+"Arteak":[9,17,26],
+"LH Teknologikoa":[3,10,13,18,27,28,35],
+"LH Biosanitarioa eta Pertsonen Arreta":[4,18,19,22,29,35],
+"LH Administratiboa eta Zerbitzuak":[6,14,18,20,23,30],
+"Batxilergorako joera":[31,32,33],
+"Lanbide Heziketarako joera":[18,34,35,36]
+};
+
+function getVal(n){
+  const x=document.querySelector(`input[name="q${n}"]:checked`);
+  return x ? Number(x.value) : null;
+}
+
+function kalkulatu(){
+  for(let i=1;i<=questions.length;i++){
+    if(getVal(i)===null){
+      alert("Mesedez, erantzun galdera guztiak.");
+      return;
+    }
+  }
+  let rows=[];
+  let sortable=[];
+  Object.entries(profiles).forEach(([name,nums])=>{
+    const score=nums.reduce((a,n)=>a+getVal(n),0);
+    const max=nums.length*4;
+    const pct=Math.round(score/max*100);
+    rows.push(`<tr><td>${name}</td><td>${score}/${max}</td><td>${pct}%</td></tr>`);
+    if(!name.includes("joera")) sortable.push([name,pct]);
+  });
+  document.getElementById("resultTable").innerHTML =
+    `<table><tr><th>Profila</th><th>Puntuazioa</th><th>Ehunekoa</th></tr>${rows.join("")}</table>`;
+
+  sortable.sort((a,b)=>b[1]-a[1]);
+  document.getElementById("topProfiles").innerHTML =
+    sortable.slice(0,3).map(x=>`<li><strong>${x[0]}</strong>: ${x[1]}%</li>`).join("");
+
+  document.getElementById("results").style.display="block";
+  document.getElementById("results").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
