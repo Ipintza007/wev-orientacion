@@ -1,0 +1,36 @@
+:root{
+  --azul:#1f4ea3; --azul2:#2d6cdf; --claro:#eef4ff;
+  --texto:#1f2937; --gris:#64748b; --blanco:#fff;
+  --sombra:0 14px 35px rgba(31,78,163,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#f8fbff,#eef4ff);color:var(--texto)}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{font-weight:800;color:var(--azul);font-size:1.15rem}
+.nav a{margin-left:18px;color:#475569;font-weight:600}
+.hero,.page-header{background:linear-gradient(135deg,#173c7f,#2d6cdf);color:white}
+.hero{min-height:360px;display:flex;align-items:center}
+.hero-content{padding:55px 0}
+.hero h1,.page-header h1{font-size:clamp(2.2rem,5vw,4rem);margin:0 0 16px}
+.hero p,.page-header p{max-width:760px;line-height:1.7;font-size:1.1rem}
+.page-header{padding:55px 0 48px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:45px auto 60px}
+.card,.box{background:white;border-radius:22px;padding:28px;box-shadow:var(--sombra);border:1px solid #e8eef9}
+.card{transition:.25s ease}
+.card:hover{transform:translateY(-7px)}
+.icon{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;font-size:2rem;background:var(--claro);margin-bottom:18px}
+.card h2,.box h2,.box h3{color:var(--azul);margin-top:0}
+.card p,.box p,.box li{color:#475569;line-height:1.7}
+.btn{display:inline-block;margin-top:14px;background:var(--azul2);color:white;padding:11px 17px;border-radius:12px;font-weight:700}
+.btn.secondary{background:#eaf2ff;color:var(--azul);border:1px solid #cddfff}
+.btn + .btn{margin-left:8px}
+.content{padding:42px 0 60px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.box{margin-bottom:22px}
+.highlight{background:linear-gradient(135deg,#eaf2ff,#f8fbff);border-left:5px solid var(--azul2)}
+.linkbox{background:#f8fbff;border:1px dashed #9bbcf2}
+.back{display:inline-block;margin-top:10px;color:var(--azul);font-weight:800}
+footer{background:#0f2f65;color:#dbeafe;text-align:center;padding:22px 0}
+@media(max-width:850px){.cards,.grid2{grid-template-columns:1fr}.nav{display:none}.btn + .btn{margin-left:0}}

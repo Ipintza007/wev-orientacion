@@ -1,0 +1,15 @@
+ORIENTAZIO AKADEMIKOA - EUSKARAZ
+
+1. ZIP fitxategia guztiz deskonprimitu.
+2. Orientazioa_EUS karpetan sartu.
+3. index.html ireki.
+4. Fitxategi guztiak karpeta berean mantendu.
+
+Fitxategiak:
+- index.html
+- dbh4.html
+- batx1.html
+- batx2.html
+- styles.css
+
+Kanpoko informazio-estekek Interneteko konexioa behar dute.
