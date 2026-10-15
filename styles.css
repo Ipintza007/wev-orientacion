@@ -8,7 +8,7 @@ body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(1
 a{text-decoration:none;color:inherit}
 .container{width:min(1120px,92%);margin:auto}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.brand{font-weight:800;color:var(--azul);font-size:1.15rem}
+.brand{font-weight:600;color:var(--azul);font-size:1.15rem}
 .nav a{margin-left:18px;color:#475569;font-weight:600}
 .hero,.page-header{background:linear-gradient(135deg,#173c7f,#2d6cdf);color:white}
 .hero{min-height:360px;display:flex;align-items:center}
