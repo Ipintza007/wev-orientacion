@@ -23,7 +23,7 @@ a{text-decoration:none;color:inherit}
 .nav a{margin-left:18px;color:#475569;font-weight:600}
 .hero,.page-header{background:linear-gradient(135deg,#173c7f,#2d6cdf);color:white}
 .hero {
-    height: 75px;
+    height: 100px;
     min-height: 0;
     display: flex;
     align-items: center;
