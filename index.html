@@ -1,20 +1,37 @@
 <!doctype html>
 <html lang="eu">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Orientazioa</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+/* OrientaLine sarbidea goiburuan */
+.orientaline-link { display:inline-flex; align-items:center; gap:12px; padding:6px 0; text-decoration:none; color:inherit; }
+.orientaline-link img { width:94px; height:94px; object-fit:contain; border-radius:9px; display:block; }
+.orientaline-link span { font-size:.85rem; font-weight:650; }
+.orientaline-link:hover img, .orientaline-link:focus-visible img { outline:3px solid #69aee9; outline-offset:3px; }
+.orientaline-link:focus-visible { outline-offset:4px; }
+@media (max-width:650px) { .orientaline-link img { width:68px; height:68px; } .orientaline-link span { font-size:.75rem; } }
+</style>
 </head>
 <body>
-<header><div class="container topbar"><div class="brand">Orientazio akademikoa</div>
-<nav class="nav"><a href="dbh4.html">DBH 4</a><a href="batx1.html">1. Batxilergoa</a><a href="batx2.html">2. Batxilergoa</a></nav>
-</div></header>
+<header>
+  <div class="container topbar">
+    <div class="brand">Orientazio akademikoa</div>
+    <nav class="nav"><a href="dbh4.html">DBH 4</a><a href="batx1.html">1. Batxilergoa</a><a href="batx2.html">2. Batxilergoa</a></nav>
+    <a class="orientaline-link" href="https://www.elorienta.com/movil/?yafxb=28691" target="_blank" rel="noopener noreferrer" aria-label="OrientaLine webgunea ireki (fitxa berrian)">
+      <img src="Orientaline%20logoa.jpg" alt="OrientaLine logotipoa">
+      <span>OrientaLine ↗</span>
+    </a>
+  </div>
+</header>
 <section class="hero"><div class="container hero-content"><h1>Orientazioa</h1>
 <p>Etapa bakoitzak zer eskaintzen duen eta ondoren zer bide ireki ditzakeen ulertzeko gida laburra.</p></div></section>
 <main class="container"><section class="cards">
-<a class="card" href="dbh4.html"><div class="icon">📘</div><h2>DBH 4</h2><p>Batxilergoa, Erdi Mailako Lanbide Heziketa edo beste aukera batzuk aztertzen hasteko unea.</p><span class="btn">Sartu</span></a>
-<a class="card" href="batx1.html"><div class="icon">🎓</div><h2>1. Batxilergoa</h2><p>Ezagutzak sakontzeko, modalitatea aukeratzeko eta etorkizuneko ikasketak bideratzen hasteko etapa.</p><span class="btn">Sartu</span></a>
-<a class="card" href="batx2.html"><div class="icon">🧭</div><h2>2. Batxilergoa</h2><p>Ondorengo ikasketak aukeratzeko eta unibertsitaterako edo Goi Mailako LHra igarotzeko ikasturte garrantzitsua.</p><span class="btn">Sartu</span></a>
+<a class="card" href="dbh4.html"><div class="icon">📘</div><h2>DBH3-&gt;DBH 4</h2><p>Batxilergoa, Erdi Mailako Lanbide Heziketa edo beste aukera batzuk aztertzen hasteko unea.</p><span class="btn">Sartu</span></a>
+<a class="card" href="batx1.html"><div class="icon">🎓</div><h2>DBH4-&gt;1. Batxilergoa</h2><p>Ezagutzak sakontzeko, modalitatea aukeratzeko eta etorkizuneko ikasketak bideratzen hasteko etapa.</p><span class="btn">Sartu</span></a>
+<a class="card" href="batx2.html"><div class="icon">🧭</div><h2>1.bATXILERGOA-&gt;2. Batxilergoa</h2><p>Ondorengo ikasketak aukeratzeko eta unibertsitaterako edo Goi Mailako LHra igarotzeko ikasturte garrantzitsua.</p><span class="btn">Sartu</span></a>
 </section></main>
 <footer><div class="container">Orientazio akademikoa</div></footer>
 </body></html>
