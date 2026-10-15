@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <title>1. Batxilergoko Aurrematrikula - Ipinza BHI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --color-fondo: #f5f5fb;
+            --color-primario: #283593;
+            --color-secundario: #3949ab;
+            --color-card: #ffffff;
+            --color-texto: #222222;
+            --color-borde: #e0e0f0;
+        }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+            background: radial-gradient(circle at top, #e8eaf6 0, #f5f5fb 45%, #ffffff 100%);
+            color: var(--color-texto);
+        }
+        header {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+            color: white;
+            padding: 1.5rem 1.5rem 2.5rem;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2rem; }
+        main {
+            max-width: 1100px;
+            margin: -1.5rem auto 2rem;
+            padding: 0 1rem;
+        }
+        .panel {
+            background: var(--color-card);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--color-borde);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+        }
+        h2 { color: var(--color-primario); margin-top: 1.5rem; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: #fafbff;
+            border-radius: 0.9rem;
+            border: 1px solid var(--color-borde);
+            padding: 1rem;
+            position: relative;
+            cursor: pointer;
+        }
+        .num { font-size: 0.8rem; text-transform: uppercase; color: #666; }
+        ul { margin: 0.3rem 0 0; padding-left: 1rem; }
+
+        /* Tooltip estilo C */
+        .card:hover .tooltip {
+            opacity: 1;
+            transform: translate(-50%, -55%);
+            pointer-events: auto;
+        }
+        .tooltip {
+            position: absolute;
+            left: 50%;
+            top: 0%;
+            transform: translate(-50%, -40%);
+            width: 260px;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease-out;
+            z-index: 50;
+        }
+        .tooltip-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #283593;
+            margin-bottom: 0.3rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Ipinza BHI – 1. Batxilergoko Aurrematrikula</h1>
+    <p>1. mailako modalitate-ibilbideak</p>
+</header>
+
+<main>
+<section class="panel">
+
+    <p>
+        1. Batxilergorako <strong>modalitateko ibilbideak</strong>.
+        Ikasleek 4 edo 3 modalitate-irakasgai aukeratu ditzakete.
+    </p>
+
+    <!-- =============================================== -->
+    <!-- ================= 4 MODALITATEKO =============== -->
+    <!-- =============================================== -->
+
+    <h2>4 modalitateko ibilbideak</h2>
+
+    <div class="grid">
+
+        <!-- 1 -->
+        <div class="card">
+            <div class="num">1. Itinerarioa (4)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika eta Kimika</li>
+                <li>Biologia</li>
+                <li>Marrazketa</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Zientzia esperimentalak</li>
+                    <li>Osasun-ikerketak</li>
+                    <li>Ingeniaritza</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <div class="num">2. Itinerarioa (4)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika eta Kimika</li>
+                <li>Tecnologia</li>
+                <li>Marrazketa</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Ingeniaritza teknologikoak</li>
+                    <li>Industria eta diseinu teknikoa</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <div class="num">3. Itinerarioa (4)</div>
+            <ul>
+                <li>Latina</li>
+                <li>Literatura</li>
+                <li>Historia</li>
+                <li>Ekonomia</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Filologiak</li>
+                    <li>Gizarte azterketak</li>
+                </ul>
+            </div>
+        </div>
+<!-- 4 -->
+        <div class="card">
+            <div class="num">4. Itinerarioa (4)</div>
+            <ul>
+                <li>Latina</li>
+                <li>Giza_Matematika</li>
+                <li>Historia</li>
+                <li>Ekonomia</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Filologiak</li>
+                    <li>Ekonomia eta gizarte azterketak</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- =============================================== -->
+    <!-- ================= 3 MODALITATEKO =============== -->
+    <!-- =============================================== -->
+
+    <h2>3 modalitateko ibilbideak</h2>
+
+    <div class="grid">
+
+        <!-- 4 -->
+        <div class="card">
+            <div class="num">4. Itinerarioa (3)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika eta Kimika</li>
+                <li>Biologia</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Osasun-zientziak</li>
+                    <li>Zientzia esperimentalak</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+            <div class="num">5. Itinerarioa (3)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika eta Kimika</li>
+                <li>Marrazketa</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Ingeniaritza</li>
+                    <li>Arkitektura</li>
+                </ul>
+            </div>
+        </div>
+<!-- 6 -->
+        <div class="card">
+            <div class="num">6. Itinerarioa (3)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika eta Kimika</li>
+                <li>Teknologia</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Goi mailako zikloak</li>
+                 
+                </ul>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <div class="num">7. Itinerarioa (3)</div>
+            <ul>
+                <li>Latina</li>
+                <li>Historia</li>
+                <li>Ekonomia</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Giza eta gizarte zientziak</li>
+                    <li>Zuzenbidea eta ekonomia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <div class="num">7. Itinerarioa (3)</div>
+            <ul>
+                <li>Giza_Matematika</li>
+                <li>Historia</li>
+                <li>Ekonomia</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Ekonomia</li>
+                    <li>Giza eta gizarte zientziak</li>
+                </ul>
+            </div>
+        </div>
+<!-- 8 -->
+        <div class="card">
+            <div class="num">8. Itinerarioa (3)</div>
+            <ul>
+                <li>Literatura</li>
+                <li>Historia</li>
+                <li>Latina</li>
+            </ul>
+            <div class="tooltip">
+                <div class="tooltip-title">Helburu akademikoak</div>
+                <ul>
+                    <li>Filologiak</li>
+                    <li>Giza eta gizarte zientziak</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <h2>3 modalitateko ibilbidea aukeratzen bada,beste irakasgai bat kurtsatu behar da honako hauetatik:.Aukeratu 3 lehentasunaren arabera.</h2>
+
+    <ul>
+        <li>Informazio eta Komunikazio Teknologia</li>
+        <li>Kultura Zientifikoa</li>
+        <li>Prentsa eta errealitate sozialaren analisia</li>
+        <li>Anatomia aplikatua</li>
+ <li>Frantsesa I</li>
+    </ul>
+
+    </ul>
+ <h2>3 orduko ikasgai bat aukeratu behar duzu hurrengoen artean.Aukeratu 5 lehentasunaren arabera</h2>
+<ul>
+        <li>Euskera C1</li>
+        <li>Algebra eta kalkulua</li>
+        <li>Gizarte Antropologia</li>
+        <li>Laborategi teknikak</li>
+ <li>Pintura I</li>
+<li>Musika-Informatika</li>
+ <li>Musika tailerra</li>
+
+    </ul>
+
+    <p class="nota">
+        Oharra: aukerak ikastetxeko antolaketa eta talde kopuruaren arabera egiaztatuko dira.
+    </p>
+
+</section>
+
+<footer>
+    Ipinza BHI · 1. Batxilergoko Aurrematrikula
+</footer>
+
+</main>
+</body>
+</html>

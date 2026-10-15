@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <title>Batxilergoko Aurrematrikula - Ipinza BHI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --color-fondo: #f5f5fb;
+            --color-primario: #283593;
+            --color-secundario: #3949ab;
+            --color-card: #ffffff;
+            --color-texto: #222222;
+            --color-borde: #e0e0f0;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+            background: radial-gradient(circle at top, #e8eaf6 0, #f5f5fb 45%, #ffffff 100%);
+            color: var(--color-texto);
+        }
+        header {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+            color: white;
+            padding: 1.5rem 1.5rem 2.5rem;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2rem; }
+        main {
+            max-width: 1100px;
+            margin: -1.5rem auto 2rem;
+            padding: 0 1rem;
+        }
+        .panel {
+            background: var(--color-card);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--color-borde);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+        }
+        h2 { color: var(--color-primario); margin-top: 1.5rem; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: #fafbff;
+            border-radius: 0.9rem;
+            border: 1px solid var(--color-borde);
+            padding: 1rem;
+            position: relative;
+            cursor: pointer;
+        }
+        .num { font-size: 0.8rem; text-transform: uppercase; color: #666; }
+        ul { margin: 0.3rem 0 0; padding-left: 1rem; }
+
+        /* =========== TOOLTIP ESTILO C (centrado + flecha) =========== */
+
+        .card:hover .tooltip {
+            opacity: 1;
+            transform: translate(-50%, -55%);
+            pointer-events: auto;
+        }
+
+        .tooltip {
+            position: absolute;
+            left: 50%;
+            top: 0%;
+            transform: translate(-50%, -40%);
+            width: 260px;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease-out;
+            z-index: 50;
+            border: 1px solid #d0d0e0;
+        }
+
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px 8px 0 8px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            filter: drop-shadow(0 -2px 2px rgba(0,0,0,0.15));
+        }
+
+        .tooltip-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #283593;
+            margin-bottom: 0.3rem;
+        }
+        .tooltip ul { padding-left: 1rem; margin: 0; }
+        .tooltip li { font-size: 0.83rem; margin-bottom: 0.15rem; }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 1.5rem;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Ipinza BHI - 2. Batxilergoko Aurrematrikula</h1>
+    <p>Modalitate-aukeren gida</p>
+</header>
+
+<main>
+<section class="panel">
+
+    <p>
+        Orrialde honetan Ipinza BHIren 2. Batxilergoko Aurrematrikularako
+        <strong>modalitate-ibilbideak</strong> azaltzen dira.  
+        Ikasleek 4 edo 3 modalitate-irakasgaiko aukerak egin ditzakete.
+    </p>
+
+    <!-- ===================================================== -->
+    <!-- =======     4 MODALITATEKO IBILBIDEAK     =========== -->
+    <!-- ===================================================== -->
+
+    <h2>4 Modalitateko Ibilbideak</h2>
+
+    <div class="grid">
+
+        <!-- 1 -->
+        <div class="card">
+            <div class="num">1. Ibilbidea (4)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika</li>
+                <li>Kimika</li>
+                <li>Marrazketa</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.MAT/FIS/KIM/MAR</div>
+                <ul>
+                   
+                <li>Ingeniaritza Kimikoa</li>
+                    <li>Ingeniaritza Mekanikoa</li>
+ <li>Ingeniaritza Elektrikoa</li>
+
+                 
+                    <li>Ingeniaritza Elektronikoa</li>
+                    <li>Ingeniaritza Informatikoa</li>
+                    <li>Ingeniaritza Aeronautikoa</li>
+                    <li>Telekomunikazio Ingeniaritza</li>
+                    <li>Ingeniaritza Digitala</li>
+                    <li>Ingeniaritza Industrial Automatikoa</li>
+                    <li>Energia Ingeniaritza</li>
+                    <li>Ingeniaritza Zibila</li>
+ <li>Edozein ingeriaritza mota</li>
+                    
+ <li>Arquitektura teknikoa</li>
+<li>Fisika</li>
+  <li>Matematika</li>
+                    <li>Kimika</li>
+               
+            
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <div class="num">2. Ibilbidea (4)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika</li>
+                <li>Kimika</li>
+                <li>Biologia</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.MAT/FIS/KIM/BIO</div>
+                <ul>
+                    <li>Medikuntza</li>
+                    <li>Odontologia</li>
+                    <li>Erizaintza</li>
+                    <li>Fisioterapia</li>
+                    <li>Farmazia</li>
+                    <li>Nutrizioa eta Dietetika</li>
+                    <li>Psikologia</li>
+                    <li>Logopedia</li>
+                    <li>Biologia</li>
+  <li>Geologia</li>
+                    <li>Bioteknologia</li>
+                    <li>Biokimika</li>
+                    <li>Kimika</li>
+                    <li>Ingeniaritza Biomedikoa</li>
+                    <li>Elikagaien Zientzia</li>
+                    <li>Ingeniaritza Kimikoa</li>
+  <li>Ingurumen zientziak</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <div class="num">3. Ibilbidea (4)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika</li>
+                <li>Teknologia</li>
+                <li>Marrazketa</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.MAT/FIS/TEK/MAR</div>
+                <ul>
+                    <li>Ingeniaritza Mekanikoa</li>
+                    <li>Ingeniaritza Elektrikoa</li>
+                    <li>Ingeniaritza Elektronikoa</li>
+                    <li>Ingeniaritza Informatikoa</li>
+                    <li>Ingeniaritza Aeronautikoa</li>
+                    <li>Ingeniaritza Telekomunikazioetan</li>
+                    <li>Ingeniaritza Industrial Automatikoa</li>
+                    <li>Ingeniaritza Digitala</li>
+                    <li>Arkitektura Teknikoa</li>
+ <li>Ingeriaritza zibila</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <div class="num">4. Ibilbidea (4)</div>
+            <ul>
+                <li>Giza_Matematika</li>
+                <li>Geografia</li>
+                <li>Artearen Historia</li>
+                <li>Ekonomia</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.GIZMA/GEO/ART/EKO</div>
+                <ul>
+                    <li>Enpresen Administrazioa</li>
+                    <li>Ekonomia</li>
+                    <li>Marketing</li>
+                    <li>Soziologia</li>
+                    <li>Gizarte Lana</li>
+  		    <li>Pedagogia</li>
+                    <li>Hezkuntza Soziala</li>
+                    <li>Zuzenbidea</li>
+                    <li>Kazetaritza</li>
+                    <li>Publizitatea</li>
+                    <li>Komunikazioa</li>
+                    <li>Lan Harremanak</li>
+                    <li>Politika eta Kudeaketa Publikoa</li>
+                </ul>
+            </div>
+        </div>
+<table><tr></tr><tr></tr><tr></tr><tr></tr></table>
+        <!-- 5 -->
+        <div class="card">
+            <div class="num">5. Ibilbidea (4)</div>
+            <ul>
+                <li>Latina</li>
+                <li>Geografia</li>
+                <li>Artearen Historia</li>
+                <li>Ekonomia</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.LAT/GEO/ART/EKO</div>
+                <ul>
+                    <li>Historia</li>
+                    <li>Artearen Historia</li>
+                    <li>Itzulpengintza</li>
+                    <li>Filologia (Ing/Eus/Klas.)</li>
+                    <li>Filosofia</li>
+                    <li>Ikus-entzunezko Komunikazioa</li>
+                    <li>Antropologia Soziala</li>
+                    <li>Artea</li>
+		    <li>Zuzenbidea</li>
+                  
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- =======     3 MODALITATEKO IBILBIDEAK     =========== -->
+    <!-- ===================================================== -->
+
+    <h2>3 Modalitateko Ibilbideak.
+</h2>
+
+    <div class="grid">
+
+        <!-- 1 -->
+        <div class="card">
+            <div class="num">1. Ibilbidea (3)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika</li>
+                <li>Marrazketa</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.MAT/FIS/MAR</div>
+                <ul>
+                    <li>Ingeniaritza Mekanikoa</li>
+                    <li>Ingeniaritza Elektrikoa</li>
+                    <li>Ingeniaritza Aeronautikoa</li>
+                    <li>Ingeniaritza Informatikoa</li>
+                    <li>Ingeniaritza Industrial Automatikoa</li>
+                    <li>Ingeniaritza Telekomunikazioetan</li>
+                 
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <div class="num">2. Ibilbidea (3)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Fisika</li>
+                <li>Kimika</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.MAT/FIS/KIM</div>
+                <ul>
+                    <li>Ingeniaritza Kimikoa</li>
+                    
+                    <li>Kimika</li>
+                    <li>Fisika</li>
+<li>Matematika</li>
+ <li>Ingurumen zientziak</li>
+
+                    <li>Ingeniaritza Mekanikoa</li>
+                    <li>Energia Ingeniaritza</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <div class="num">3. Ibilbidea (3)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Kimika</li>
+                <li>Biologia</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.MAT/KIM/BIO</div>
+                <ul>
+                    <li>Medikuntza</li>
+                    <li>Farmazia</li>
+                    <li>Odontologia</li>
+                    <li>Erizaintza</li>
+                    <li>Fisioterapia</li>
+                    <li>Nutrizioa</li>
+                    <li>Psikologia</li>
+                    <li>Biologia</li>
+ <li>Logopedia</li>
+                    <li>Biokimika</li>
+                    <li>Bioteknologia</li>
+ <li>Ingurumen zientziak</li>
+  <li>Psikologia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <div class="num">4. Ibilbidea (3)</div>
+            <ul>
+                <li>Matematika</li>
+                <li>Teknologia</li>
+                <li>Marrazketa</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.MAT/TEK/MAR</div>
+                <ul>
+                    <li>Goi mailako gradu teknologikoak</li>
+                  
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+            <div class="num">5. Ibilbidea (3)</div>
+            <ul>
+                <li>Giza_Matematika</li>
+                <li>Ekonomia</li>
+                <li>Geografia</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.GIZMA/EKO/GEO</div>
+                <ul>
+                    <li>Ekonomia</li>
+                    <li>Enpresen Administrazioa</li>
+                    <li>Marketing</li>
+                    <li>Finantzak</li>
+                    <li>Lan Harremanak</li>
+                    <li>Politika eta Kudeaketa Publikoa</li>
+                    <li>Soziologia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card">
+            <div class="num">6. Ibilbidea (3)</div>
+            <ul>
+                <li>Giza_Matematika</li>
+                <li>Ekonomia</li>
+                <li>Artearen Historia</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.GIZMA/EKO/ART</div>
+                <ul>
+                    <li>Ekonomia</li>
+                    <li>Marketing</li>
+                    <li>Komunikazioa</li>
+                    <li>Artearen Historia</li>
+                    <li>Artea</li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <div class="num">7. Ibilbidea (3)</div>
+            <ul>
+                <li>Latina</li>
+                <li>Geografia</li>
+                <li>Artearen Historia</li>
+            </ul>
+
+            <div class="tooltip">
+                <div class="tooltip-title">Gomendatutako graduak.LAT/GEO/ART</div>
+                <ul>
+                    <li>Historia</li>
+                    <li>Artearen Historia</li>
+                    <li>Itzulpengintza</li>
+                    <li>Filologia</li>
+                    <li>Filosofia</li>
+                    <li>Ikus-entzunezko Komunikazioa</li>
+                    <li>Antropologia Soziala</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+<ul>
+<h2>Modalitatezko 3 ikasgai aukeratzen badituzu hurrengoen artean BAT kurtsatu behar da. Aukeratu 5 lehentasunen arabera.</h2>
+        <li>Lurra eta Ingurumen Zientziak</li>
+        <li>Psikologia</li>
+        <li>Administrazioa eta Kudeaketaren Oinarriak</li>
+        <li>Mekanika</li>
+        <li>Pintura II</li>
+        <li>Informazio eta Komunikazio Teknologiak II</li>
+        <li>Algebra eta Kalkuluak II</li>
+        <li>Jarduera Fisikoa aisia eta Osasuna</li>
+       
+        <li>Robotika eta 3D</li>
+    </ul>
+
+ <p class="nota">
+	Beste ibilbide bat aukeratzea posible izango da ikasgaien antolaketa egiterakoan aukera badago.
+        Oharra: adierazitako aukera guztiak ezin dira bermatu. Taldeen antolaketa eta azken eskaintza ikastetxeko zuzendaritzak baieztatuko ditu, ikasleen aukerak kontutan hartuz.
+    </p>
+
+</section>
+
+<footer>
+    Ipinza BHI · Batxilergoko Aurrematrikula
+</footer>
+
+</main>
+
+</body>
+</html>
+
